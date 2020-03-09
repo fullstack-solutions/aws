@@ -1,5 +1,8 @@
 import boto3
 
+
+
+def add_list_attribute(list_objects)
 #Upload list of objects on dynaomodb by serializing it
 
 serializer = boto3.dynamodb.types.TypeSerializer()
