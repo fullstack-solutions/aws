@@ -6,6 +6,7 @@ boto3.resource('dynamodb')
 
 your_id = 'project-id'
 
+##query by global secondary index i.e. project_id-index
 updateStatus = client.query(
     TableName='Testing',
     IndexName='project_id-index',
@@ -15,6 +16,7 @@ updateStatus = client.query(
         ":project_id": {"S": your_id}
     }
 )
+##to get primary key i.e. ID to update the table by adding attribute
 test = updateStatus['Items'][0]
 deserializer = boto3.dynamodb.types.TypeDeserializer()
 python_data = {k: deserializer.deserialize(
